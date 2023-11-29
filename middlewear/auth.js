@@ -1,13 +1,13 @@
 const jwt=require("jsonwebtoken")
 
 const IsAuth = (req, res, next) => {
-    let cookie = req.cookies
-    if (cookie.token) {
-        let decoded = jwt.verify(cookie.token, 'pass');
+    let token = req.cookies.token
+    if (token) {
+        let decoded = jwt.verify(token, 'pass');
         next()
     }
     else{
-        res.send("you are not authorize")
+        res.redirect("/user/login")
     }
 }
 
