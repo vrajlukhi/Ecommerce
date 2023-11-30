@@ -4,6 +4,7 @@ const IsAuth = (req, res, next) => {
     let token = req.cookies.token
     if (token) {
         let decoded = jwt.verify(token, 'pass');
+        req.body.UserId=decoded.id
         next()
     }
     else{

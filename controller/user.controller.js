@@ -34,7 +34,7 @@ const login = async (req, res) => {
         bcrypt.compare(password, data.password,(err, result) => {
             if (result) {
                     let token = jwt.sign({ id: data._id }, 'pass');
-                    res.cookie("token", token).redirect("/user/pro")
+                    res.cookie("token", token).redirect("/product/proadd")
             }
             else {
                 res.send({msg:"your password is incorrect"})
@@ -46,8 +46,5 @@ const login = async (req, res) => {
         res.redirect("/user/signup")
     }
 }
-const pro=(req,res)=>{
-    res.render("product")
-}
 
-module.exports = { signupui, signup, loginui, login ,pro}
+module.exports = { signupui, signup, loginui, login }

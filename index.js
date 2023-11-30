@@ -2,6 +2,7 @@ const express=require("express")
 const connect = require("./confing/db")
 const cookie=require("cookie-parser")
 const UserRoute = require("./routes/user.router")
+const ProRoute = require("./routes/product.route")
 require("dotenv").config()
 const app=express()
 app.use(express.json())
@@ -12,6 +13,7 @@ app.use(express.static(__dirname+"/public"))
 app.use(cookie())
 
 app.use("/user",UserRoute)
+app.use("/product",ProRoute)
 
 app.listen("8090",()=>{
     connect()

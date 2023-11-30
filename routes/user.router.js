@@ -7,6 +7,5 @@ UserRoute.get("/signup",signupui)
 UserRoute.post("/signup",signup)
 UserRoute.get("/login",loginui)
 UserRoute.post("/login",login)
-UserRoute.get("/pro",IsAuth,pro)
 
 module.exports=UserRoute

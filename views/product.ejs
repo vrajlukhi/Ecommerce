@@ -7,5 +7,34 @@
 </head>
 <body>
     <h1>product page</h1>
+    <form action="/product/proadd" method="post">
+        <input type="text" name="title" placeholder="Enter title">
+        <input type="text" name="desc" placeholder="Enter description">
+        <input type="url" name="img" placeholder="Enter image">
+        <input type="number" name="price" placeholder="Enter price">
+        <input type="submit">
+    </form>
+    <div id="products"></div>
 </body>
+<script>
+    fetch("/product/products")
+        .then((res) => res.json())
+        .then((data) => {
+            data.map((ele) => {
+                let div = document.createElement("div")
+                let h2 = document.createElement("h2")
+                h2.innerHTML = `title : ${ele.title}`
+                let img = document.createElement("img")
+                img.src = ` ${ele.img}`
+                img.setAttribute("width", "200px")
+                img.setAttribute("height", "200px")
+                let h4 = document.createElement("h4")
+                h4.innerHTML = `description : ${ele.desc}`
+                let h3 = document.createElement("h3")
+                h3.innerHTML = `price : ${ele.price}`
+                div.append(h2, img, h3, h4)
+                document.getElementById("products").append(div)
+            })
+        })
+</script>
 </html>
