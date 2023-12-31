@@ -3,6 +3,7 @@ const connect = require("./confing/db")
 const cookie=require("cookie-parser")
 const UserRoute = require("./routes/user.router")
 const ProRoute = require("./routes/product.route")
+const { IsAuth } = require("./middlewear/auth")
 require("dotenv").config()
 const app=express()
 app.use(express.json())
@@ -14,6 +15,9 @@ app.use(cookie())
 
 app.use("/user",UserRoute)
 app.use("/product",ProRoute)
+app.use("/",IsAuth,(req,res)=>{
+    res.redirect("/product")
+})
 
 app.listen("8090",()=>{
     connect()

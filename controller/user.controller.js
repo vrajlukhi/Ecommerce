@@ -38,8 +38,7 @@ const login = async (req, res) => {
             }
             else {
                 res.send({msg:"your password is incorrect"})
-            }
-        });
+            }        });
     }
     else{
         alert("first signup")

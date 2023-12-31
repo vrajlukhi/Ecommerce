@@ -9,7 +9,14 @@ const productadd=async(req,res)=>{
 }
 const product=async(req,res)=>{
     let data=await ProductModel.find({UserId:req.body.UserId})
-    res.send({prodata:data})
+    res.json(data)
+}
+const allproductui=async(req,res)=>{
+    let data=await ProductModel.find()
+    res.json(data)
+}
+const allproduct=async(req,res)=>{
+    res.render("products")
 }
 
-module.exports={productadd,productui,product}
+module.exports={productadd,productui,product,allproduct,allproductui}

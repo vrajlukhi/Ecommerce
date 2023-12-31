@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            max-width: 1140px;
+            margin: auto;
+        }
+        header{
+            background-color: black;
+            padding: 18px 15px;
+        }
+        header nav ul{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        header nav ul li{
+            list-style: none;
+        }
+        header nav ul li a{
+            text-decoration: none;
+            color: white;
+            font-size: 25px;
+            font-weight: 700;
+            text-transform: capitalize;
+            transition: all 0.5s;
+        }
+        header nav ul li a:hover{
+            color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/product/proadd">Add Product</a></li>
+                    <li><a href="/product/proadd">Cart</a></li>
+                    <li><a href="/user/signup">Signup</a></li>
+                    <li><a href="/user/login">Login</a></li>
+                    <li><a href="/user/profile">User</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+</body>
+</html>
