@@ -31,10 +31,22 @@
                 h4.innerHTML = `description : ${ele.desc}`
                 let h3 = document.createElement("h3")
                 h3.innerHTML = `price : ${ele.price}`
-                let btn1=document.createElement("button")
-                btn1.innerHTML="Add Cart"
+                let btn1 = document.createElement("button");
+            btn1.innerHTML = "Add to cart"
+            btn1.addEventListener("click", () => cart(ele._id))
 
-                div.append( img,h2, h3, h4)
+            const cart = (id) => {
+                console.log(id)
+                fetch(`/product/cart/${id}`, {
+                    method: "POST",
+                    headers: { "content-type": "application/json" },
+                    body: JSON.stringify({ productID: id })
+                })
+                    .then((response) => response.json())
+                    .then((data) => console.log(data))
+            }
+
+                div.append( img,h2, h3, h4,btn1)
                 document.getElementById("products").append(div)
             })
         })
