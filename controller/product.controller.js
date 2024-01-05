@@ -58,8 +58,8 @@ const quntity = async(req, res) => {
 // payment 
 
 const razorpay = new Razorpay({
-    key_id :"rzp_test_ZwsKvw5bh9rweM",
-    key_secret :"ElVpauo6VzGuQEv8znHcuwwG"
+    key_id :"rzp_test_bLAqvl1z0C0XkX",
+    key_secret :"nizRRMzym2GDOjgHzhMZ0Svv"
 })
 
 const payment = (req, res) => {

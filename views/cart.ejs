@@ -63,6 +63,7 @@
         document.getElementById("ui").innerHTML = " "
         data.map((element) => {
             let ele = element.productID
+            console.log(ele);
             Tprice = Number(Tprice) + Number(ele.price) * element.qty
             let img = document.createElement("img");
             img.src = ele.img
@@ -110,7 +111,7 @@
         })
         let order = await res.json()
         let options = {
-            key :"rzp_test_ZwsKvw5bh9rweM",
+            key :"rzp_test_bLAqvl1z0C0XkX",
             amount : order.amount
         }
         let rpay = new Razorpay(options)
@@ -119,8 +120,7 @@
     fetch("/product/cartdata")
         .then((response) => response.json())
         .then((response) => {
-            products = response;
-            display(products);
+            display(response);
         });
 </script>
 
